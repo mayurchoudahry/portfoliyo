@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading-screen {
+    @apply fixed top-0 left-0 w-full h-full bg-black flex justify-center items-center z-50;
+  }
+  
+  .progress-bar {
+    @apply h-1 bg-cyan-400; /* Tailwind cyan color for the progress bar */
+  }
+  
+  .cursor-bar {
+    @apply absolute top-1/2 left-0 w-5 h-5 bg-cyan-400 rounded-full transform -translate-y-1/2;
+    transition: left 0.1s linear;
+  }
+  
+  .landing-page {
+    @apply relative w-full h-screen;
+  }
+  
+  .landing-image {
+    @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center;
+  }
+  

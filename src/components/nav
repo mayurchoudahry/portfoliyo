@@ -1,0 +1,62 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full h-32 font-serif flex items-center justify-between p-0">
+      {/* The two expanding divs for the "gate" effect */}
+      <div
+        className={`absolute left-0 w-full bg-black transition-all duration-500 ease ${
+          hovered ? 'h-1/2 top-0' : 'h-0 top-1/2'
+        }`}
+      ></div>
+      <div
+        className={`absolute left-0 w-full bg-black transition-all duration-500 ease ${
+          hovered ? 'h-1/2 bottom-0' : 'h-0 bottom-1/2'
+        }`}
+      ></div>
+
+      {/* Navigation links */}
+      <Link
+        to="/about"
+        className={`relative z-20 px-4 ${hovered ? 'text-white' : 'text-black'} focus:outline-none`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        About
+      </Link>
+
+      <a
+        href="#"
+        className={`relative z-20 px-4 ${hovered ? 'text-white' : 'text-black'}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        Projects
+      </a>
+      <a
+        href="#"
+        className={`relative z-20 px-4 ${hovered ? 'text-white' : 'text-black'}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        Works
+      </a>
+      <a
+        href="#"
+        className={`relative z-20 px-4 ${hovered ? 'text-white' : 'text-black'}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        Contact
+      </a>
+      <span className={`relative z-20 px-4 ${hovered ? 'text-white' : 'text-black'}`}>
+        2002
+      </span>
+    </div>
+  );
+};
+
+export default Navbar;
